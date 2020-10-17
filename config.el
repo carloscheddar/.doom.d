@@ -55,3 +55,12 @@
 
 ;; Use the Open Source hack font https://sourcefoundry.org/hack/
 (setq doom-font (font-spec :family "Hack" :size 14))
+
+;; Change bindings to match my spacemacs muscle memory
+(map! :leader "w W" 'ace-window)
+
+;; Change ace-window letter styling
+(custom-set-faces!
+  '(aw-leading-char-face
+    :foreground "white" :background "red"
+    :weight bold :height 2.5 :box (:line-width 10 :color "red")))
