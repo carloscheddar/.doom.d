@@ -52,3 +52,6 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; Use the Open Source hack font https://sourcefoundry.org/hack/
+(setq doom-font (font-spec :family "Hack" :size 14))
