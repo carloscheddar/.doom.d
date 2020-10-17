@@ -57,7 +57,12 @@
 (setq doom-font (font-spec :family "Hack" :size 14))
 
 ;; Change bindings to match my spacemacs muscle memory
+(map! :leader "TAB" 'evil-switch-to-windows-last-buffer)
 (map! :leader "w W" 'ace-window)
+(map! :leader "v" 'er/expand-region)
+(map! :leader ";" 'evilnc-comment-operator)
+(map! :leader "p R" 'projectile-replace)
+(map! :v "s" 'evil-surround-region)
 
 ;; Change ace-window letter styling
 (custom-set-faces!
