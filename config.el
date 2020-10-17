@@ -56,12 +56,19 @@
 ;; Use the Open Source hack font https://sourcefoundry.org/hack/
 (setq doom-font (font-spec :family "Hack" :size 14))
 
+;; TODO: Add a PR to add this to the projectile module
+(defun projectile-yank-relative-path ()
+  "Copy the filename relative to the project path"
+  (interactive)
+  (kill-new (file-relative-name buffer-file-name (projectile-project-root))))
+
 ;; Change bindings to match my spacemacs muscle memory
 (map! :leader "TAB" 'evil-switch-to-windows-last-buffer)
 (map! :leader "w W" 'ace-window)
 (map! :leader "v" 'er/expand-region)
 (map! :leader ";" 'evilnc-comment-operator)
 (map! :leader "p R" 'projectile-replace)
+(map! :leader "p y" 'projectile-yank-relative-path)
 (map! :v "s" 'evil-surround-region)
 
 ;; Change ace-window letter styling
