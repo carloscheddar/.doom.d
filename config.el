@@ -96,3 +96,10 @@
   (interactive "r")
   (shell-command-on-region start end "xargs | sed -e 's/ /, /g'" (current-buffer) t))
 
+
+;; Allow option key to work like native MacOS to enter accented characters
+;; TODO: Make a PR to add this to the MacOS module
+(setq mac-command-key-is-meta nil)
+(setq mac-command-modifier 'super)
+(setq mac-option-key-is-meta t)
+(setq mac-option-modifier t)
