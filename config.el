@@ -90,3 +90,9 @@
 
 ;; Set indentation for my setup to 2
 (my-setup-indent 2)
+
+;; Converts selected region into comma separated values in 1 line
+(defun rows-to-array (&optional start end)
+  (interactive "r")
+  (shell-command-on-region start end "xargs | sed -e 's/ /, /g'" (current-buffer) t))
+
