@@ -69,3 +69,24 @@
   '(aw-leading-char-face
     :foreground "white" :background "red"
     :weight bold :height 2.5 :box (:line-width 10 :color "red")))
+
+;; Set indentation for various modes
+;; Source: http://blog.binchen.org/posts/easy-indentation-setup-in-emacs-for-web-development.html
+(defun my-setup-indent (n)
+  ;; web development
+  (setq-local coffee-tab-width n) ; coffeescript
+  (setq-local react-tab-width n) ; React
+  (setq-local javascript-indent-level n) ; javascript-mode
+  (setq-local js-indent-level n) ; js-mode
+  (setq-local js2-basic-offset n) ; js2-mode, in latest js2-mode, it's alias of js-indent-level
+  (setq-local web-mode-markup-indent-offset n) ; web-mode, html tag in html file
+  (setq-local web-mode-css-indent-offset n) ; web-mode, css in html file
+  (setq-local web-mode-code-indent-offset n) ; web-mode, js code in html file
+  (setq-local web-mode-attr-indent-offset n)
+  (setq-local css-indent-offset n) ; css-mode
+  (setq-local sgml-basic-offset n)
+  ;; java/c/c++
+  (setq-local c-basic-offset n))
+
+;; Set indentation for my setup to 2
+(my-setup-indent 2)
