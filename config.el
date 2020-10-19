@@ -58,9 +58,12 @@
 
 ;; TODO: Add a PR to add this to the projectile module
 (defun projectile-yank-relative-path ()
-  "Copy the filename relative to the project path"
+  "Copy the buffer's filename relative to the project path.
+Prints the copied string to the mini buffer."
   (interactive)
-  (kill-new (file-relative-name buffer-file-name (projectile-project-root))))
+  (let ((name (file-relative-name buffer-file-name (projectile-project-root))))
+    (kill-new name)
+    (message name)))
 
 ;; Change bindings to match my spacemacs muscle memory
 (map! :leader "TAB" 'evil-switch-to-windows-last-buffer)
