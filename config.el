@@ -116,3 +116,7 @@ Prints the copied string to the mini buffer."
 
 ;; Highlight parens and do/end blocks
 (show-smartparens-global-mode 1)
+
+;; Enable evil-matchit globally
+;; This extends the functionality of the % matcher to work with do/end blocks
+(global-evil-matchit-mode 1)
