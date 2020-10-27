@@ -113,3 +113,6 @@ Prints the copied string to the mini buffer."
 (setq mac-command-modifier 'super)
 (setq mac-option-key-is-meta t)
 (setq mac-option-modifier t)
+
+;; Highlight parens and do/end blocks
+(show-smartparens-global-mode 1)
