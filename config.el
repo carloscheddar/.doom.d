@@ -53,8 +53,8 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-;; Use the Open Source hack font https://sourcefoundry.org/hack/
-(setq doom-font (font-spec :family "Hack" :size 14))
+;; Use the Open Source Fira code font https://github.com/tonsky/FiraCode
+(setq doom-font (font-spec :family "Fira Code" :size 14))
 
 ;; TODO: Add a PR to add this to the projectile module
 (defun projectile-yank-relative-path ()
