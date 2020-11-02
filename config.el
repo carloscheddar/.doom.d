@@ -120,3 +120,9 @@ Prints the copied string to the mini buffer."
 ;; Enable evil-matchit globally
 ;; This extends the functionality of the % matcher to work with do/end blocks
 (global-evil-matchit-mode 1)
+
+;; Enable calling projectile-rails commands fromm coffee-mode
+;; This allows us to use shortcuts like SPC m r m to find a rails model
+(after! projectile-rails
+  (when (featurep! :lang web)
+    (add-hook 'coffee-mode-hook #'projectile-rails-mode)))
