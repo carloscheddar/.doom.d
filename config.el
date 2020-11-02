@@ -120,6 +120,3 @@ Prints the copied string to the mini buffer."
 ;; Enable evil-matchit globally
 ;; This extends the functionality of the % matcher to work with do/end blocks
 (global-evil-matchit-mode 1)
-
-;; Open .eco files with web-mode
-(add-to-list 'auto-mode-alist '("\\.eco\\'" . web-mode) 'append)
