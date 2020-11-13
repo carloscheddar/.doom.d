@@ -125,4 +125,5 @@ Prints the copied string to the mini buffer."
 ;; This allows us to use shortcuts like SPC m r m to find a rails model
 (after! projectile-rails
   (when (featurep! :lang web)
-    (add-hook 'coffee-mode-hook #'projectile-rails-mode)))
+    (add-hook 'coffee-mode-hook #'projectile-rails-mode)
+    (add-hook 'rjsx-mode-hook #'projectile-rails-mode)))
