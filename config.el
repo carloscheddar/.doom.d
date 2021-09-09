@@ -127,3 +127,17 @@ Prints the copied string to the mini buffer."
   (when (featurep! :lang web)
     (add-hook 'coffee-mode-hook #'projectile-rails-mode)
     (add-hook 'rjsx-mode-hook #'projectile-rails-mode)))
+
+;; Fix issues with eslint Source: https://github.com/ar1a/dotfiles/blob/master/emacs/.doom.d/config.el
+(setq +set-eslint-checker nil)
+(after! lsp
+  ;; for whatever reason, this was running twice.
+  (setq lsp-ui-sideline-show-hover t)
+  (when (not +set-eslint-checker)
+    (progn
+      (setq +set-eslint-checker t)
+      (flycheck-add-mode 'javascript-eslint 'web-mode)
+      (flycheck-add-next-checker 'lsp '(warning . javascript-eslint)))))
+
+
+;; Add SPC + r command to access rails files. That way it works in every mode.
